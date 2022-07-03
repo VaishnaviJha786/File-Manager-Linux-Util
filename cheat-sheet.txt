@@ -1,0 +1,55 @@
+
+
+File Manager Command Line Tool
+
+File Manager is a command line tool, designed to operate on basic input/output files. Including and limited to named pipes, unnamed pipes, normal files on UNIX System.
+
+Operations allowed: 
+	1. Create
+	2. Read
+	3. Write
+	4. Info 
+
+Pre-requisites
+
+	First compile the code to make the executable file
+		gcc file_manager.c -o file_manager
+
+Usage
+
+	To run the tool 
+		./file_manager <file-type> <file-name> <mode>
+
+	<file-type>
+
+		The allowed file-types are 
+
+		1. Unnamed Pipe- "unnamed-pipe"
+		2. Named Pipe- "named-pipe"
+		3. Normal File- "file"
+
+
+	<file-name>
+
+		User-defined name for named pipes and files. (Not required in case of unnamed pipes).
+
+
+	<mode>
+
+		1. create- Allows creation of named pipes and files.
+		2. read- Allows to read from a named pipe and a file.
+		3. write- Allows to write to a named pipe and a file.
+		4. info- Displays the info about the named pipe and file.
+
+		Note: These operations are not allowed in case of unnamed pipes.
+
+
+Example 
+
+
+	./file_manager named-pipe create fifo1 
+
+	./file_manager file f1.txt read
+
+	./file_manager unnamed-pipe 
+
